@@ -2,7 +2,7 @@ import express from 'express';
 import bodyparser from 'body-parser';
 import { ok } from './shared/services/api.service';
 
-const PORT = 4000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(bodyparser.urlencoded({ extended: false }));
