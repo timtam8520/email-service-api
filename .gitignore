@@ -1,3 +1,6 @@
+# Compiled JavaScript output from tsc
+dist
+
 # Logs
 logs
 *.log
