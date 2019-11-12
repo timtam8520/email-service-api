@@ -1,4 +1,4 @@
-const STATUS_CODE = {
+const ERROR = {
   FIELD_INVALID: (field: string) => `The field '${field}' is invalid in the request!`,
   FIELD_INVALID_OR_EMAIL_MISSING: (field: string) => `The field '${field}' may be invalid or one or more 'email(s)' are missing`,
   NAME_INVALID_TYPE: (name: string, field: string) => `The name '${name}' is invalid in the field '${field}'`,
@@ -8,4 +8,4 @@ const STATUS_CODE = {
   CONTENT_INVALID: 'The field \'content\' is not of a valid type. It must be a string',
 };
 
-export default STATUS_CODE;
+export default ERROR;
