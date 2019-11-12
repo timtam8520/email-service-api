@@ -6,6 +6,8 @@ const ERROR = {
   EMAIL_INVALID: (email: string, prop: string) => `The email '${email}' is invalid, in the field '${prop}'`,
   CONTENT_MISSING: 'You must provide the field \'content\' in the request!',
   CONTENT_INVALID: 'The field \'content\' is not of a valid type. It must be a string',
+  PROVIDER_ERROR: (err: string) => `There was an issue with the provider. Could not send email. ${err}`,
+  PROVIDER_SEND_FAIL: (err: string) => `Could not send the email! ${err}`,
 };
 
 export default ERROR;
