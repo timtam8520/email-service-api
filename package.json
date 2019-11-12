@@ -2,13 +2,13 @@
   "name": "email-service-api",
   "version": "1.0.0",
   "description": "RESTful Email service API that integrates with multiple email service providers to send emails.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon",
     "prebuild": "rm -rf dist",
     "build-ts": "tsc",
     "postinstall": "yarn build-ts",
-    "serve": "yarn build-ts && node dist/index.js",
+    "serve": "yarn build-ts && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint **/*.ts"
   },
