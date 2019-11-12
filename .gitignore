@@ -1,3 +1,5 @@
+*.pdf
+
 # Compiled JavaScript output from tsc
 dist
 
