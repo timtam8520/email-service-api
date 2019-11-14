@@ -1,5 +1,6 @@
 const ERROR = {
-  FIELD_INVALID: (field: string) => `The field '${field}' is invalid in the request!`,
+  FIELD_INVALID: (field: string) => `The field '${field}' is invalid in the request. Please ensure that it is an array!`,
+  FIELD_MISSING_EMAILS: (field: string) => `The field '${field}' has no emails provided. Please ensure to provide at least one email!`,
   FIELD_INVALID_OR_EMAIL_MISSING: (field: string) => `The field '${field}' may be invalid or one or more 'email(s)' are missing`,
   NAME_INVALID_TYPE: (name: string, field: string) => `The name '${name}' is invalid in the field '${field}'`,
   EMAIL_EMPTY: (field: string) => `One or more 'email(s)' are empty in the field '${field}'`,
