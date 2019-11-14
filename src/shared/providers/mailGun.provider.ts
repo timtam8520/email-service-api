@@ -1,4 +1,5 @@
 /* eslint-disable no-throw-literal */
+
 import { Options } from 'request-promise-native';
 import btoa from 'btoa';
 

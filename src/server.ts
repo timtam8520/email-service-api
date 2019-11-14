@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import express from 'express';
 import bodyparser from 'body-parser';
 import { ok } from './shared/services/api.service';
@@ -12,5 +14,4 @@ app.use(bodyparser.json());
 app.get('/health', (_: any, res) => ok(res, "I'm a little teapot, not really!"));
 app.post('/sendEmail', (req, res) => trySendEmail(req, res));
 
-/* eslint-disable-next-line no-console */
 app.listen(PORT, () => console.log(`Email Service API is running on PORT: ${PORT}`));

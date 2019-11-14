@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 /* eslint-disable prefer-promise-reject-errors */
 /* eslint-disable consistent-return */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-loop-func */
 
 import { EmailBody } from '../types/emailTypes';
 import MailGunProvider from './mailGun.provider';
@@ -57,8 +59,6 @@ async function safeRetry(fn: Function, retry = 0): Promise<Result> {
   });
 }
 
-/* eslint-disable no-await-in-loop */
-/* eslint-disable no-loop-func */
 async function sendEmail(body: EmailBody) {
   let providerIndex = 0;
   const providers = emailProviders.map((p) => Activator(p));
