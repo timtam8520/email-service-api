@@ -11,7 +11,7 @@ const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|
  * @param recipients List of recipients
  * @param field Which recipient list is being verified
  */
-function verifyRecipients(recipients: [Recipient], field: EmailField) {
+function verifyRecipients(recipients: Recipient[], field: EmailField) {
   const errors: string[] = [];
 
   for (let i = 0; i < recipients.length; i += 1) {
@@ -34,7 +34,7 @@ function verifyRecipients(recipients: [Recipient], field: EmailField) {
   return errors;
 }
 
-function verifyField(field: [Recipient], fieldName: EmailField) {
+function verifyField(field: Recipient[], fieldName: EmailField) {
   const errors: string[] = [];
 
   if (!field || !Array.isArray(field)) {

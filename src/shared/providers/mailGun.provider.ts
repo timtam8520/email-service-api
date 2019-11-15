@@ -44,7 +44,7 @@ class MailGunProvider implements EmailProvider {
     return `Basic ${credentials}`;
   }
 
-  static getEmailList(recipients: [Recipient]): string {
+  static getEmailList(recipients: Recipient[]): string {
     return recipients.map((r) => r.email).join(',');
   }
 

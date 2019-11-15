@@ -14,9 +14,9 @@ import { EmailProvider } from './interface.provider';
 
 type SendGridBody = {
   personalizations: [{
-    to: [Recipient];
-    cc: [Recipient];
-    bcc: [Recipient];
+    to: Recipient[];
+    cc: Recipient[];
+    bcc: Recipient[];
     subject: string;
   }],
   from: Recipient,

@@ -1,7 +1,7 @@
 export type EmailBody = {
-  to: [Recipient],
-  cc: [Recipient],
-  bcc: [Recipient],
+  to: Recipient[],
+  cc?: Recipient[],
+  bcc?: Recipient[],
   content: string
 };
 
