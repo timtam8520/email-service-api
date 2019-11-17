@@ -17,7 +17,7 @@ To call the API you need to send a JSON `POST` request, with a body that takes t
 
 ```json
 {
-	"to": [
+    "to": [
       { "email": "test@gmail.com" }, 
       { "email": "emailsvc2019@gmail.com" }
     ],
@@ -29,7 +29,7 @@ To call the API you need to send a JSON `POST` request, with a body that takes t
       { "email": "test@gmail.com" }, 
       { "email": "emailsvc2019@gmail.com" }
     ],
-	"content": "This is truly amazing!! 10987"
+    "content": "This is truly amazing!! 10987"
 }
 ```
 The API will provide helpful error messages to guide you as to what your body should include or not include. If you don't need to send emails to BCC recipients, then you shouldn't provide this property, the api will expect that if this property is provided there is at least one email.
