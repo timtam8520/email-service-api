@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ok, badRequest } from './api.service';
+import { ok, badRequest, InternalServerError } from './api.service';
 import verifyRequest from './verifyRequest.service';
 import sendEmail from '../providers/default.provider';
 
@@ -12,9 +12,8 @@ async function trySendEmail(req: Request, res: Response) {
     const result = await sendEmail(req.body);
     return ok(res, result);
   } catch (error) {
-    badRequest(res);
+    return InternalServerError(res, { error });
   }
-  return true;
 }
 
 export default trySendEmail;

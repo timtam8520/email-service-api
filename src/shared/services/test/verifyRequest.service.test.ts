@@ -99,7 +99,29 @@ describe('verifyRequest.service', () => {
         name: invalidName,
       }],
     };
+
     const errors = verifyRequest(request);
     verifyErrorsContainElement(errors, ERROR.NAME_INVALID_TYPE(invalidName, 'to'));
+  });
+
+  it('should be able to report that there are no errors in the request', () => {
+    const validRequest: EmailBody = {
+      to: [
+        {
+          email: 'email1@org.com.au',
+          name: 'Email 1',
+        },
+        {
+          email: 'temp@email.com',
+        },
+      ],
+      cc: [{
+        email: 'other@email.com',
+      }],
+      content: 'Some cracker content!!',
+    };
+
+    const errors = verifyRequest(validRequest);
+    expect(errors).to.be.an('array').that.has.lengthOf(0);
   });
 });
