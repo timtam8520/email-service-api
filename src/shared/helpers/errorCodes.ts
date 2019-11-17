@@ -3,7 +3,7 @@ import { EmailField } from '../types/emailTypes';
 const ERROR = {
   FIELD_INVALID: (field: EmailField) => `The field '${field}' is invalid in the request. Please ensure that it is an array!`,
   FIELD_MISSING_EMAILS: (field: EmailField) => `The field '${field}' has no emails provided. Please ensure to provide at least one email!`,
-  FIELD_INVALID_OR_EMAIL_MISSING: (field: EmailField, elem: any) => `The field '${field}' contains one or more invalid elements or the 'email' properties are missing. Invalid element => ${JSON.stringify(elem)}`,
+  FIELD_INVALID_OR_EMAIL_MISSING: (field: EmailField, elem: any) => `The field '${field}' contains one or more invalid elements or the 'email' property is missing. Invalid element => ${JSON.stringify(elem)}`,
   NAME_INVALID_TYPE: (name: any, field: EmailField) => `The name '${name}' is invalid in the field '${field}'`,
   EMAIL_INVALID_TYPE: (email: any, field: EmailField) => `The following email ${email} is not a valid string', in the field '${field}'`,
   EMAIL_INVALID: (email: string, field: EmailField) => `The email '${email}' is invalid, in the field '${field}'`,
