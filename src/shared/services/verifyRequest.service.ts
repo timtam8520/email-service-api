@@ -1,5 +1,6 @@
 
 /* eslint-disable no-control-regex */
+/* eslint-disable eqeqeq */
 import { Recipient, EmailBody, EmailField } from '../types/emailTypes';
 import ERROR from '../helpers/errorCodes';
 
@@ -20,8 +21,9 @@ function verifyRecipients(recipients: Recipient[], field: EmailField) {
       name,
     } = recipients[i];
 
-    if (email === undefined) {
-      errors.push(ERROR.FIELD_INVALID_OR_EMAIL_MISSING(field));
+    // intentionally not type checking to fetch values that are null as well
+    if (email == undefined) {
+      errors.push(ERROR.FIELD_INVALID_OR_EMAIL_MISSING(field, recipients[i]));
     } else if (typeof email !== 'string') {
       errors.push(ERROR.EMAIL_EMPTY(field));
     } else if (!new RegExp(EMAIL_REGEX).test(email)) {
