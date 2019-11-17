@@ -12,7 +12,7 @@ The API should always be **UP** and should not crash.
 The credentials to the email address are 
 ```
 u/n: emailsvc2019@gmail.com
-p/w: Test1234%
+p/w: Hello1234%
 ```
 
 ## Installation/Start-Up
