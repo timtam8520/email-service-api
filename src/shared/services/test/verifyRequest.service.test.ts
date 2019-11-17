@@ -66,7 +66,7 @@ describe('verifyRequest.service', () => {
     verifyErrorsContainElement(errors, ERROR.FIELD_INVALID_OR_EMAIL_MISSING('cc', invalid));
   });
 
-  it('should be able to report that the "bcc"  field contains an email of invalid type', () => {
+  it('should be able to report that the "bcc" field contains an email of invalid type', () => {
     const invalid = { email: 987 };
     const request: any = {
       to: [{ email: 'good@email.com ' }],
@@ -74,7 +74,7 @@ describe('verifyRequest.service', () => {
     };
 
     const errors = verifyRequest(request);
-    verifyErrorsContainElement(errors, ERROR.FIELD_INVALID_OR_EMAIL_MISSING('bcc', invalid));
+    verifyErrorsContainElement(errors, ERROR.EMAIL_INVALID_TYPE(invalid.email, 'bcc'));
   });
 
   it('should be able to report that the "to" field contains an invalid email', () => {
@@ -89,5 +89,17 @@ describe('verifyRequest.service', () => {
 
     const errors = verifyRequest(request);
     verifyErrorsContainElement(errors, ERROR.EMAIL_INVALID(invalidEmail, 'to'));
+  });
+
+  it('should be able to report that the name field is not of a valid type', () => {
+    const invalidName = /someRegex/;
+    const request: any = {
+      to: [{
+        email: 'valid@email.com',
+        name: invalidName,
+      }],
+    };
+    const errors = verifyRequest(request);
+    verifyErrorsContainElement(errors, ERROR.NAME_INVALID_TYPE(invalidName, 'to'));
   });
 });

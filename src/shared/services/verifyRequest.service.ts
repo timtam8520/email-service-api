@@ -25,7 +25,7 @@ function verifyRecipients(recipients: Recipient[], field: EmailField) {
     if (email == undefined) {
       errors.push(ERROR.FIELD_INVALID_OR_EMAIL_MISSING(field, recipients[i]));
     } else if (typeof email !== 'string') {
-      errors.push(ERROR.EMAIL_EMPTY(field));
+      errors.push(ERROR.EMAIL_INVALID_TYPE(email, field));
     } else if (!new RegExp(EMAIL_REGEX).test(email)) {
       errors.push(ERROR.EMAIL_INVALID(email, field));
     } else if (name !== undefined && typeof name !== 'string') {
